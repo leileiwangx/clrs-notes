@@ -9,4 +9,4 @@ This repo contains some samples to run python solutions of leetcode on local env
 We love contributions! Before submitting a Pull Request, it's always good to start with a new issue first.
 
 ## License
-This repository is licensed under Apache 2.0. Full license text is available in [LICENSE](https://github.com/snlndod/SDE-PREPARES/blob/main/LICENSE).
+This repository is licensed under Apache 2.0. Full license text is available in [LICENSE](https://github.com/wangleileichina/pythonenv/blob/main/LICENSE).
