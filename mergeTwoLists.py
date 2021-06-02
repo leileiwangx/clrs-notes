@@ -7,7 +7,7 @@ class ListNode():
         self.next = None
 
 # convert array to linked list
-def create_linked_list(arr):
+def convertArrayToLinkedList(arr):
     head = ListNode(arr[0])
     cur = head
     for i in range(1, len(arr)):
@@ -16,7 +16,7 @@ def create_linked_list(arr):
     return head
 
 # return array format of linked list
-def print_linked_list(head):
+def convertLinkedListToArray(head):
     res = []
     cur = head
     while cur:
@@ -38,11 +38,11 @@ class Solution():
             return l1
 
 def main():
-    head1 = create_linked_list([1, 2, 4])
-    head2 = create_linked_list([1, 3, 4])
+    head1 = convertArrayToLinkedList([1, 2, 4])
+    head2 = convertArrayToLinkedList([1, 3, 4])
     solution = Solution()
-    sorted_list = solution.mergeTwoLists(head1, head2)
-    print(print_linked_list(sorted_list))
+    mergedLinkedList = solution.mergeTwoLists(head1, head2)
+    print(convertLinkedListToArray(mergedLinkedList))
     # output [1, 1, 2, 3, 4, 4]
 
 if __name__ == "__main__":
