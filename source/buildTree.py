@@ -56,9 +56,14 @@ def converTreeToList(root):
                 temp.append(node.left if node.left else None)
                 temp.append(node.right if node.right else None)
         stack = temp
-    # remove end None
 
-    return res
+    # remove end None
+    i = len(res) - 1
+    while i >= 0:
+        if res[i] != None:
+            break
+        i -= 1
+    return res[: i + 1]
 
 class Solution:
     def buildTree(self, preorder, inorder):
@@ -75,6 +80,7 @@ def main():
     solution = Solution()
     root = solution.buildTree(preorder, inorder)
     print(converTreeToList(root))
+    # output : [3, 9, 20, None, None, 15, 7]
 
 
 if __name__ == '__main__':
