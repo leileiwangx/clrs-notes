@@ -13,13 +13,13 @@ def preorder(root):
     if not root:
         return []
     return [root.val] + preorder(root.left) + preorder(root.right)
-    
+
 def preorder1(root):
     def dfs(root):
         if root:
             res.append(root.val)
             dfs(root.left)
-            dfs(root.right) 
+            dfs(root.right)
     res = []
     dfs(root)
     return res
@@ -49,7 +49,7 @@ def preorder3(root):
         cur = stack.pop()
         cur = cur.right
     return res
-    
+
 # []
 root = None
 print(preorder(root))
@@ -86,13 +86,13 @@ def inorder(root):
     if not root:
         return []
     return inorder(root.left) + [root.val] + inorder(root.right)
-    
+
 def inorder1(root):
     def dfs(root):
         if root:
             dfs(root.left)
             res.append(root.val)
-            dfs(root.right) 
+            dfs(root.right)
     res = []
     dfs(root)
     return res
@@ -146,13 +146,13 @@ class TreeNode:
 def postorder(root):
     if not root:
         return []
-    return postorder(root.left) + postorder(root.right) + [root.val] 
-    
+    return postorder(root.left) + postorder(root.right) + [root.val]
+
 def postorder1(root):
     def dfs(root):
         if root:
             dfs(root.left)
-            dfs(root.right) 
+            dfs(root.right)
             res.append(root.val)
 
     res = []
@@ -193,8 +193,6 @@ def postorder3(root):
             cur = None ##
     return res
 
-
-    
 
 # []
 root = None
