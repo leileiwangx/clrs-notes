@@ -65,7 +65,7 @@ def quick_sort(nums):
     return nums
 ```
 ## merge sort
-### space logn
+### recursion
 ```python
 def merge_sort(nums):
     def merge(lo, mi, hi):
@@ -103,6 +103,48 @@ def merge_sort(nums):
     sort(0, len(nums) - 1)
     return nums
 ```
-### space o(1) merge sort
+### iteration
+```python
+def mergeSort(nums):
+    n = len(nums)
+    dst = nums[:]
+    length = 1
+    while length < n:
+        start = 0
+        while start < n:
+            mid = min(start + length, n)
+            end = min(start + length * 2, n)
+            i, j, k = start, mid, start
+            while i < mid or j < end:
+                if j == end or (i < mid and  nums[i] < nums[j]):
+                    dst[k] = nums[i]
+                    i += 1
+                else:
+                    dst[k] = nums[j]
+                    j += 1
+                k += 1
+            start += length * 2
+
+        nums = dst[:]  
+        length += length
+    return nums
+```
 
 ## count sort
+```python
+def count_sort(nums):
+    mi, ma = sys.maxsize, -sys.maxsize
+    for num in nums:
+        mi = min(num, mi)
+        ma = max(num, ma)
+    counts = [0] * (ma - mi + 1)
+    for num in nums:
+        counts[num - mi] += 1
+    i = 0
+    for j in range(mi, ma + 1):
+        while counts[j - mi]:
+            nums[i] = j
+            i += 1
+            counts[j - mi] -= 1
+    return nums
+```
