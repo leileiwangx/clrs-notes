@@ -38,19 +38,6 @@ def heap_sort(nums):
         nums[i], nums[0] = nums[0], nums[i]
         heapify(i, 0)
     return nums
-
-nums = []
-print(heap_sort(nums))
-nums = [1]
-print(heap_sort(nums))
-nums = [1, 1, 1, 1, 1]
-print(heap_sort(nums))
-nums = [4, 3, 2, 1]
-print(heap_sort(nums))
-nums = [1, 2, 3, 4]
-print(heap_sort(nums))
-nums = [2, 3, 9, 1, 4, 5, 4]
-print(heap_sort(nums))
 ```
 ## quick sort
 ```python
@@ -76,19 +63,6 @@ def quick_sort(nums):
 
     quickSort(0, len(nums) - 1)
     return nums
-
-nums = []
-print(quick_sort(nums))
-nums = [1]
-print(quick_sort(nums))
-nums = [1, 1, 1, 1, 1]
-print(quick_sort(nums))
-nums = [4, 3, 2, 1]
-print(quick_sort(nums))
-nums = [1, 2, 3, 4]
-print(quick_sort(nums))
-nums = [2, 3, 9, 1, 4, 5, 4]
-print(quick_sort(nums))
 ```
 ## merge sort
 ### space logn
@@ -106,12 +80,10 @@ def merge_sort(nums):
                 temp[k] = nums[j]
                 j += 1
                 k += 1
-        # if i < mi:
         while i <= mi:
             temp[k] = nums[i]
             i += 1
             k += 1
-        # if j <= hi:
         while j <= hi:
             temp[k] = nums[j]
             j += 1
@@ -130,20 +102,7 @@ def merge_sort(nums):
     temp = nums[:]
     sort(0, len(nums) - 1)
     return nums
-
-nums = []
-print(merge_sort(nums))
-nums = [1]
-print(merge_sort(nums))
-nums = [1, 1, 1, 1, 1]
-print(merge_sort(nums))
-nums = [4, 3, 2, 1]
-print(merge_sort(nums))
-nums = [1, 2, 3, 4]
-print(merge_sort(nums))
-nums = [2, 3, 9, 1, 4, 5, 4]
-print(merge_sort(nums))
 ```
-
 ### space o(1) merge sort
+
 ## count sort

@@ -49,29 +49,6 @@ def preorder3(root):
         cur = stack.pop()
         cur = cur.right
     return res
-
-# []
-root = None
-print(preorder(root))
-# [1]
-root = TreeNode(1)
-print(preorder(root))
-# [1, 2]
-root = cur =  TreeNode(1)
-cur.left = TreeNode(2)
-print(preorder(root))
-
-# [1, null, 2]
-root = TreeNode(1)
-root.right = TreeNode(2)
-print(preorder(root))
-
-# [1, null, 2, 3]
-root = cur = TreeNode(1)
-cur.right = TreeNode(2)
-cur = cur.right
-cur.left = TreeNode(3)
-print(preorder(root))
 ```
 
 ### in_order
@@ -110,29 +87,6 @@ def inorder2(root):
         res.append(node.val)
         node = node.right
     return res
-
-# []
-root = None
-print(inorder(root))
-# [1]
-root = TreeNode(1)
-print(inorder(root))
-# [1, 2]
-root = cur =  TreeNode(1)
-cur.left = TreeNode(2)
-print(inorder(root))
-
-# [1, null, 2]
-root = TreeNode(1)
-root.right = TreeNode(2)
-print(inorder(root))
-
-# [1, null, 2, 3]
-root = cur = TreeNode(1)
-cur.right = TreeNode(2)
-cur = cur.right
-cur.left = TreeNode(3)
-print(inorder(root))
 ```
 
 ### post_order
@@ -192,30 +146,6 @@ def postorder3(root):
             pre = cur
             cur = None ##
     return res
-
-
-# []
-root = None
-print(postorder(root))
-# [1]
-root = TreeNode(1)
-print(postorder(root))
-# [1, 2]
-root = cur =  TreeNode(1)
-cur.left = TreeNode(2)
-print(postorder(root))
-
-# [1, null, 2]
-root = TreeNode(1)
-root.right = TreeNode(2)
-print(postorder(root))
-
-# [1, null, 2, 3]
-root = cur = TreeNode(1)
-cur.right = TreeNode(2)
-cur = cur.right
-cur.left = TreeNode(3)
-print(postorder(root))
 ```
 
 ### levelOrder
