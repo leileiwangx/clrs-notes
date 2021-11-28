@@ -3,28 +3,7 @@
 ## traversal
 ### pre_order
 ```python
-class TreeNode:
-    def __init__(self, val = 0, left = None, right = None):
-        self.val = val
-        self.left = left
-        self.right = right
-
 def preorder(root):
-    if not root:
-        return []
-    return [root.val] + preorder(root.left) + preorder(root.right)
-
-def preorder1(root):
-    def dfs(root):
-        if root:
-            res.append(root.val)
-            dfs(root.left)
-            dfs(root.right)
-    res = []
-    dfs(root)
-    return res
-
-def preorder2(root):
     if not root: return []
     res = []
     stack = [root]
@@ -37,7 +16,7 @@ def preorder2(root):
             stack.append(node.left)
     return res
 
-def preorder3(root):
+def preorder(root):
     res = []
     cur = root
     stack = []
@@ -53,28 +32,7 @@ def preorder3(root):
 
 ### in_order
 ```python
-class TreeNode:
-    def __init__(self, val = 0, left = None, right = None):
-        self.val = val
-        self.left = left
-        self.right = right
-
 def inorder(root):
-    if not root:
-        return []
-    return inorder(root.left) + [root.val] + inorder(root.right)
-
-def inorder1(root):
-    def dfs(root):
-        if root:
-            dfs(root.left)
-            res.append(root.val)
-            dfs(root.right)
-    res = []
-    dfs(root)
-    return res
-
-def inorder2(root):
     if not root: return []
     res = []
     node = root
@@ -91,29 +49,7 @@ def inorder2(root):
 
 ### post_order
 ```python
-class TreeNode:
-    def __init__(self, val = 0, left = None, right = None):
-        self.val = val
-        self.left = left
-        self.right = right
-
 def postorder(root):
-    if not root:
-        return []
-    return postorder(root.left) + postorder(root.right) + [root.val]
-
-def postorder1(root):
-    def dfs(root):
-        if root:
-            dfs(root.left)
-            dfs(root.right)
-            res.append(root.val)
-
-    res = []
-    dfs(root)
-    return res
-
-def postorder2(root):
     if not root: return []
     stack = [root]
     res = []
@@ -126,7 +62,7 @@ def postorder2(root):
             stack.append(cur.right)
     return res[::-1]
 
-def postorder3(root):
+def postorder(root):
     if not root: return []
     cur = root
     pre = None
