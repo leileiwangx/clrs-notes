@@ -85,5 +85,21 @@ def postorder(root):
 ```
 
 ### levelOrder
-
+```python
+def levelOrder(root: TreeNode):
+    if not root:
+        return []
+    cur = [root]
+    res = []
+    while cur:
+        res.append([node.val for node in cur])
+        temp = []
+        for node in cur:
+            if node.left:
+                temp.append(node.left)
+            if node.right:
+                temp.append(node.right)
+        cur = temp
+    return res
+```
 ### N Tree
