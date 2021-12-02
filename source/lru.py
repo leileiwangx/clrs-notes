@@ -55,12 +55,3 @@ class LRUCache:
         node = self.tail.prev
         self.removeNode(node)
         return node
-
-lru = LRUCache(3)
-lru.put(1, 1)
-lru.put(2, 2)
-lru.put(3, 3)
-lru.put(4, 4)
-print(lru.cache)
-lru.put(2,5)
-print(lru.get(2))
